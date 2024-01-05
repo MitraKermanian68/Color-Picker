@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Picker with JavaScript</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="imgCont">
+      <img src="./color_bucket.webp" draggable="false" />
+    </div>
+    <div class="container">
+      <h1>Color Picker</h1>
+      <label for="color">Pick a color:</label>
+      <br />
+      <input type="color" name="color" id="color" />
+      <br />
+      <p id="result"></p>
+    </div>
+
+    <script>
+      const color = document.getElementById("color");
+      const result = document.getElementById("result");
+
+      color.addEventListener("input", () => {
+        result.textContent = color.value.toUpperCase();
+        result.style.color = color.value;
+
+        document.body.style.backgroundColor = color.value;
+      });
+    </script>
+  </body>
+</html>
